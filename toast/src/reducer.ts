@@ -1,41 +1,26 @@
-import { ToastToggleStateType, ToastMessageStateType } from './state';
+import { createContext, Dispatch, useContext } from 'react';
+import { ToastStateType } from './state';
 
 // https://www.newline.co/@bespoyasov/how-to-use-usereducer-with-typescript--3918a332
-export type Reducer<State, Action> = (state: State, action: Action) => State;
-export type ToastToggleAction = {
-  type: 'TOAST_TOGGLE';
-  payload: boolean;
-};
-export type ToastMessageAction = {
-  type: 'TOAST_MESSAGE';
-  payload: string;
+type Reducer<State, Action> = (state: State, action: Action) => State;
+
+export type ToastAction = {
+  type: 'SET_TOAST';
+  payload: ToastStateType;
 };
 
-export const toastToggleReducer: Reducer<
-  ToastToggleStateType,
-  ToastToggleAction
-> = (state: ToastToggleStateType, action: ToastToggleAction) => {
+export const toastReducer: Reducer<ToastStateType, ToastAction> = (
+  state: ToastStateType,
+  action: ToastAction
+) => {
   switch (action.type) {
-    case 'TOAST_TOGGLE':
-      return { ...state, toastToggle: action.payload };
+    case 'SET_TOAST':
+      return { ...state, state: action.payload };
 
     default:
       throw new Error(`Unknown action: ${action.type}`);
   }
 };
 
-export const toastMessageReducer: Reducer<
-  ToastMessageStateType,
-  ToastMessageAction
-> = (state: ToastMessageStateType, action: ToastMessageAction) => {
-  switch (action.type) {
-    case 'TOAST_MESSAGE':
-      return {
-        ...state,
-        toastMessage: action.payload,
-      };
-
-    default:
-      throw new Error(`Unknown action: ${action.type}`);
-  }
-};
+export const ToastDispatchContext = createContext({} as Dispatch<ToastAction>);
+export const useToastDispatchContext = () => useContext(ToastDispatchContext);

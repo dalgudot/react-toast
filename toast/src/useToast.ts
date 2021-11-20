@@ -1,36 +1,27 @@
 import { useEffect } from 'react';
-import {
-  useToastMessageContext,
-  useToastMessageDispatchContext,
-  useToastToggleContext,
-  useToastToggleDispatchContext,
-} from './state';
+import { useToastDispatchContext } from './reducer';
+import { ToastStateType, useToastStateContext } from './state';
 
-export const useToast = (duration: number = 3000) => {
-  const toastToggleState = useToastToggleContext().toastToggle;
-  const toastMessageState = useToastMessageContext().toastMessage;
-  const toggleDispatch = useToastToggleDispatchContext();
-  const messageDispatch = useToastMessageDispatchContext();
+export const useToast = (duration: number = 1850) => {
+  const toastState = useToastStateContext();
+  const toastToggleState = toastState.toastToggle;
+  const toastMessageState = toastState.toastMessage;
 
-  console.log('useToast');
-
-  const setToastToggle = (togglePayload: boolean) => {
-    toggleDispatch({
-      type: 'TOAST_TOGGLE',
-      payload: togglePayload,
-    });
-  };
-
-  const setMessageToggle = (messagePayload: string) => {
-    messageDispatch({
-      type: 'TOAST_MESSAGE',
-      payload: messagePayload,
+  const dispatch = useToastDispatchContext();
+  const setToast = (toast: ToastStateType) => {
+    dispatch({
+      type: 'SET_TOAST',
+      payload: toast,
     });
   };
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      setToastToggle(false);
+      toastToggleState &&
+        setToast({
+          toastToggle: false,
+          toastMessage: toastState.toastMessage,
+        });
     }, duration);
 
     return () => {
@@ -38,12 +29,12 @@ export const useToast = (duration: number = 3000) => {
     };
   }, [toastToggleState]);
 
-  // The role of showToast is dispatch!
-  // Dispatch is the function for changing the state.
   const showToast = (message: string) => {
     if (toastToggleState === false) {
-      setToastToggle(true);
-      setMessageToggle(message);
+      setToast({
+        toastToggle: true,
+        toastMessage: message,
+      });
     }
   };
 
