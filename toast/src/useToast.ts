@@ -1,32 +1,36 @@
 import { useEffect } from 'react';
-import { useToastDispatch, useToastState } from './toast-state-management';
+import {
+  useToastMessageContext,
+  useToastMessageDispatchContext,
+  useToastToggleContext,
+  useToastToggleDispatchContext,
+} from './state';
 
-export const useToast = (duration: number = 1850) => {
-  const toastState = useToastState();
-  const toastToggleState = toastState.toastToggle;
-  const toastMessageState = toastState.toastMessage;
+export const useToast = (duration: number = 3000) => {
+  const toastToggleState = useToastToggleContext().toastToggle;
+  const toastMessageState = useToastMessageContext().toastMessage;
+  const toggleDispatch = useToastToggleDispatchContext();
+  const messageDispatch = useToastMessageDispatchContext();
 
-  const dispatch = useToastDispatch() as any;
+  console.log('useToast');
 
-  console.log(toastState);
+  const setToastToggle = (togglePayload: boolean) => {
+    toggleDispatch({
+      type: 'TOAST_TOGGLE',
+      payload: togglePayload,
+    });
+  };
 
-  const setToast = (toast: {
-    toastToggle: boolean;
-    toastMessage: string | null;
-  }) => {
-    dispatch({
-      type: 'TOAST',
-      payload: toast,
+  const setMessageToggle = (messagePayload: string) => {
+    messageDispatch({
+      type: 'TOAST_MESSAGE',
+      payload: messagePayload,
     });
   };
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      toastToggleState &&
-        setToast({
-          toastToggle: false,
-          toastMessage: toastState.toastMessage,
-        });
+      setToastToggle(false);
     }, duration);
 
     return () => {
@@ -34,13 +38,12 @@ export const useToast = (duration: number = 1850) => {
     };
   }, [toastToggleState]);
 
+  // The role of showToast is dispatch!
+  // Dispatch is the function for changing the state.
   const showToast = (message: string) => {
     if (toastToggleState === false) {
-      // console.log('click');
-      setToast({
-        toastToggle: true,
-        toastMessage: message,
-      });
+      setToastToggle(true);
+      setMessageToggle(message);
     }
   };
 

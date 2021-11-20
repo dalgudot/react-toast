@@ -1,2 +1,2 @@
-export { ToastProvider } from './toast-state-management';
-export * from './useToast';
+export { ToastProvider } from './provider';
+export { useToast } from './useToast';
