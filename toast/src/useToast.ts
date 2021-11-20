@@ -7,6 +7,8 @@ export const useToast = (duration: number = 1850) => {
   const toastToggleState = toastState.toastToggle;
   const toastMessageState = toastState.toastMessage;
 
+  console.log('useToast');
+
   const dispatch = useToastDispatchContext();
   const setToast = (toast: ToastStateType) => {
     dispatch({

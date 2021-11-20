@@ -4,15 +4,13 @@ import { ToastStateContext, INITIAL_STATE } from './state';
 import { Toast } from './toast';
 
 type ToastProviderProps = {
+  duration?: number;
   children: JSX.Element;
 };
 
 export const ToastProvider: React.FC<ToastProviderProps> = ({
   duration,
   children,
-}: {
-  duration?: number;
-  children: JSX.Element;
 }) => {
   const [state, dispatch] = useReducer(toastReducer, INITIAL_STATE);
 

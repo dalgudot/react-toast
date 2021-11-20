@@ -8,7 +8,7 @@ import styled from 'styled-components';
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Main>
-      <ToastProvider>
+      <ToastProvider duration={4000}>
         <Component {...pageProps} />
       </ToastProvider>
     </Main>
