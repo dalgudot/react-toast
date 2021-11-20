@@ -1,36 +1,52 @@
 import { AnimatePresence } from 'framer-motion';
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import { useOptionsDispatchContext } from './reducer';
+import { OptionsType, useOptionsContext } from './state';
 import { useToast } from './useToast';
 
-export interface ToastProps {
-  duration?: number;
-}
+export const Toast = ({ optionsPayload }: { optionsPayload: OptionsType }) => {
+  const { toastToggleState, toastMessageState } = useToast();
 
-export const Toast: React.FC<ToastProps> = ({ duration }) => {
-  const { toastToggleState, toastMessageState } = useToast(duration);
+  const optionsDispatchContext = useOptionsDispatchContext();
+  const setOptions = (optionsPayload: OptionsType) => {
+    optionsDispatchContext({
+      type: 'SET_OPTIONS',
+      payload: optionsPayload,
+    });
+  };
+
+  useEffect(() => {
+    setOptions(optionsPayload);
+  }, [optionsPayload.duration, optionsPayload.zIndex]);
+
+  const optionsContext = useOptionsContext();
+  const toastZIndex = optionsContext.zIndex;
 
   return (
     <>
       <AnimatePresence>
         {toastToggleState && (
-          <ToastPosition>
-            <ToastContainer>
+          <Position toastZIndex={toastZIndex}>
+            <Container>
               <Text>{toastMessageState}</Text>
-            </ToastContainer>
-          </ToastPosition>
+            </Container>
+          </Position>
         )}
       </AnimatePresence>
     </>
   );
 };
 
-const ToastPosition = styled.div`
+const Position = styled.div<{ toastZIndex: number }>`
   /* S of CSS Reset */
-
+  div,
+  p {
+    box-sizing: border-box;
+  }
   /* E of CSS Reset */
 
-  z-index: 10000;
+  z-index: ${({ toastZIndex }) => toastZIndex};
   position: fixed;
   top: 28px;
   left: 0;
@@ -43,7 +59,7 @@ const ToastPosition = styled.div`
   }
 `;
 
-const ToastContainer = styled.div`
+const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

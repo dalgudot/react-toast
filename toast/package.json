@@ -1,6 +1,6 @@
 {
   "name": "@dalgu/react-toast",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "author": "KyungHwan Kim",
   "license": "MIT",
   "main": "dist/index.js",

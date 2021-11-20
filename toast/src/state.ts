@@ -12,3 +12,22 @@ export const INITIAL_STATE: ToastStateType = {
 
 export const ToastStateContext = createContext(INITIAL_STATE);
 export const useToastStateContext = () => useContext(ToastStateContext);
+
+/**
+ *
+ * Options Context
+ *
+ */
+
+export type OptionsType = {
+  duration: number;
+  zIndex: number;
+};
+
+export const INITIAL_STATE_OPTIONS: OptionsType = {
+  duration: 2000,
+  zIndex: 8,
+};
+
+export const OptionsContext = createContext(INITIAL_STATE_OPTIONS);
+export const useOptionsContext = () => useContext(OptionsContext);

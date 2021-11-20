@@ -1,20 +1,25 @@
 import { useEffect } from 'react';
 import { useToastDispatchContext } from './reducer';
-import { ToastStateType, useToastStateContext } from './state';
+import {
+  ToastStateType,
+  useOptionsContext,
+  useToastStateContext,
+} from './state';
 
-export const useToast = (duration: number = 1850) => {
+export const useToast = () => {
   const toastState = useToastStateContext();
   const toastToggleState = toastState.toastToggle;
   const toastMessageState = toastState.toastMessage;
 
-  const dispatch = useToastDispatchContext();
+  const toastDispatchContext = useToastDispatchContext();
   const setToast = (toast: ToastStateType) => {
-    dispatch({
+    toastDispatchContext({
       type: 'SET_TOAST',
       payload: toast,
     });
   };
 
+  const optionsContext = useOptionsContext();
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       toastToggleState &&
@@ -22,7 +27,7 @@ export const useToast = (duration: number = 1850) => {
           toastToggle: false,
           toastMessage: toastMessageState,
         });
-    }, duration);
+    }, optionsContext.duration);
 
     return () => {
       clearTimeout(timeoutId);

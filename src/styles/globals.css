@@ -1,8 +1,8 @@
 html,
 body {
-  background-color: var(--gray6);
+  background-color: #363636;
 }
 
-p {
+/* p {
   color: var(--gray1);
-}
+} */
