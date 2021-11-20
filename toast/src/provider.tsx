@@ -1,12 +1,11 @@
 import React, { useReducer } from 'react';
 import { ToastDispatchContext, toastReducer } from './reducer';
 import { ToastStateContext, INITIAL_STATE } from './state';
-import { Toast } from './toast';
+import { Toast, ToastProps } from './toast';
 
-type ToastProviderProps = {
-  duration?: number;
+interface ToastProviderProps extends ToastProps {
   children: JSX.Element;
-};
+}
 
 export const ToastProvider: React.FC<ToastProviderProps> = ({
   duration,

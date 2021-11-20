@@ -3,14 +3,14 @@ import { ToastStateType } from './state';
 
 // https://www.newline.co/@bespoyasov/how-to-use-usereducer-with-typescript--3918a332
 type Reducer<State, Action> = (state: State, action: Action) => State;
-export type ToastAction = {
+export type ToastActionType = {
   type: 'SET_TOAST';
   payload: ToastStateType;
 };
 
-export const toastReducer: Reducer<ToastStateType, ToastAction> = (
+export const toastReducer: Reducer<ToastStateType, ToastActionType> = (
   _state: ToastStateType,
-  action: ToastAction
+  action: ToastActionType
 ) => {
   switch (action.type) {
     case 'SET_TOAST':
@@ -21,5 +21,7 @@ export const toastReducer: Reducer<ToastStateType, ToastAction> = (
   }
 };
 
-export const ToastDispatchContext = createContext({} as Dispatch<ToastAction>);
+export const ToastDispatchContext = createContext(
+  {} as Dispatch<ToastActionType>
+);
 export const useToastDispatchContext = () => useContext(ToastDispatchContext);
