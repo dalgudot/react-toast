@@ -1,0 +1,47 @@
+{
+  "name": "@dalgu/react-toast",
+  "version": "0.1.14",
+  "author": "KyungHwan Kim",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test",
+    "lint": "tsdx lint",
+    "prepare": "tsdx build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "module": "dist/toast.esm.js",
+  "size-limit": [
+    {
+      "path": "dist/toast.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/toast.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^6.0.4",
+    "husky": "^7.0.4",
+    "size-limit": "^6.0.4",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1"
+  }
+}
