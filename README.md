@@ -117,13 +117,21 @@ ReactDOM.render(
 ## New features scheduled to update 💡
 
 ✔️ Customizable style
+
 ✔️ Customizable motion
+
 ✔️ Customizable position
+
 ✔️ Multiple toast notifications
+
 ✔️ Advanced reponsive design
+
 ✔️ Remove dependency `styled-components`
+
 ✔️ Remove dependency `framer-motion`
+
 ✔️ add test
+
 ✔️ ...more new features!
 
 <br/>
