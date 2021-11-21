@@ -1,6 +1,6 @@
 {
   "name": "@dalgu/react-toast",
-  "version": "0.1.18",
+  "version": "0.1.21",
   "author": "KyungHwan Kim",
   "license": "MIT",
   "main": "dist/index.js",
@@ -47,7 +47,7 @@
     "tslib": "^2.3.1"
   },
   "dependencies": {
-    "framer-motion": "^5.3.1",
+    "framer-motion": "^4.1.17",
     "styled-components": "^5.3.3"
   }
 }
