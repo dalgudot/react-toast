@@ -94,7 +94,7 @@ const App = () => {
 
 <br/>
 
-You can use the `options as props` like the below example.
+You can use the `Options as props` like the below example. All `Options as props` are optional props. I will add more props `Options as props` in the future.
 
 ```jsx
 import { ToastProvider } from '@dalgu/react-toast';
