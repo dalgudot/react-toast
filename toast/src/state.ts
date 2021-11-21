@@ -25,7 +25,7 @@ export type OptionsType = {
 };
 
 export const INITIAL_STATE_OPTIONS: OptionsType = {
-  duration: 2000,
+  duration: 2,
   zIndex: 100000,
 };
 

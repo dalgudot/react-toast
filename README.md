@@ -50,7 +50,7 @@ yarn add @dalgu/react-toast
 
 #### API
 
-react-toast includes a `<ToastProvider />` component, which makes the toast available everywhere of your app when you need notification for user.
+React Toast includes a `<ToastProvider />` component, which makes the toast available everywhere of your app when you need notification for user.
 
 ```jsx
 import { ToastProvider } from '@dalgu/react-toast';
@@ -67,7 +67,7 @@ ReactDOM.render(
 
 #### Hooks
 
-react-toast provides custom React hooks `useToast` that allow the toast notification to show to the user.
+React Toast provides a custom React hooks `useToast` that allow the toast notification to show to the user.
 
 ```jsx
 import { useToast } from '@dalgu/react-toast';
@@ -86,6 +86,26 @@ const App = () => {
 <br/>
 
 ## Options as props
+
+| prop       | type      | default | description                        |
+| ---------- | --------- | ------- | ---------------------------------- |
+| `duration` | `number?` | 2       | Time showing the toast `in second` |
+| `zIndex`   | `number?` | 100000  | Set the CSS property `z-index`     |
+
+<br/>
+
+You can use the `options as props` like the below example.
+
+```jsx
+import { ToastProvider } from '@dalgu/react-toast';
+
+ReactDOM.render(
+  <ToastProvider duration={3} zIndex={100}>
+    <App />
+  </ToastProvider>,
+  document.getElementById('root')
+);
+```
 
 <br/>
 

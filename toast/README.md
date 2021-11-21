@@ -16,13 +16,17 @@ A built-in global-state-management toast notification library for React web appl
 
 ✅ Available on desktop, tablet, mobile
 
+✅ Minimal design
+
 ✅ Ready for iOS safe area
 
 ✅ New features to upadate every weekend!
 
 <br/>
 
-## Motivation
+## Motivation ✨
+
+I'm designing & developing the React product system for React web applications these days.
 
 <br/>
 
@@ -46,7 +50,7 @@ yarn add @dalgu/react-toast
 
 #### API
 
-`ToastProvider`
+React Toast includes a `<ToastProvider />` component, which makes the toast available everywhere of your app when you need notification for user.
 
 ```jsx
 import { ToastProvider } from '@dalgu/react-toast';
@@ -63,7 +67,7 @@ ReactDOM.render(
 
 #### Hooks
 
-`useToast`
+React Toast provides a custom React hooks `useToast` that allow the toast notification to show to the user.
 
 ```jsx
 import { useToast } from '@dalgu/react-toast';
@@ -73,7 +77,7 @@ const App = () => {
 
   return (
     <>
-      <button onClick={() => showToast("I'm react-toast!")}>showToast</button>
+      <button onClick={() => showToast("I'm React Toast!")}>showToast</button>
     </>
   );
 };
@@ -83,9 +87,29 @@ const App = () => {
 
 ## Options as props
 
+| prop       | type      | default | description                        |
+| ---------- | --------- | ------- | ---------------------------------- |
+| `duration` | `number?` | 2       | Time showing the toast `in second` |
+| `zIndex`   | `number?` | 100000  | Set the CSS property `z-index`     |
+
 <br/>
 
-## New features scheduled to update
+You can use the `options as props` like the below example.
+
+```jsx
+import { ToastProvider } from '@dalgu/react-toast';
+
+ReactDOM.render(
+  <ToastProvider duration={3} zIndex={100}>
+    <App />
+  </ToastProvider>,
+  document.getElementById('root')
+);
+```
+
+<br/>
+
+## New features scheduled to update 💡
 
 - [ ] customizable style
 - [ ] customizable motion
@@ -100,6 +124,20 @@ const App = () => {
 ## Demo
 
 Coming soon!
+
+<br/>
+
+## Thanks to 🙏
+
+- [ReactJS](https://reactjs.org/)
+
+- [NextJS](https://nextjs.org/)
+
+- [Styled-Components](https://github.com/styled-components/styled-components)
+
+- [Framer-Motion](https://github.com/framer/motion)
+
+- [Typescript](https://www.typescriptlang.org/)
 
 <br/>
 
