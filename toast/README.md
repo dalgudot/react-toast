@@ -6,22 +6,47 @@
 
 A built-in global-state-management toast notification library for React web application
 
+✅ Built-in global-state-management
+
+✅ Easy to use
+
+✅ Available on desktop, tablet, mobile, any environment
+
+✅ Ready for iOS safe area
+
+✅ New features to upadate every weekend!
+
+<br/>
+
+```
+npm i @dalgu/react-toast
+```
+
+```
+yarn add @dalgu/react-toast
+```
+
 <br/>
 
 ## Motivation
 
 <br/>
 
-## Installation
+## Motivation
+
+<br/>
+
+## How to use
+
+```jsx
+```
 
 <br/>
 
 ## Documentation
 
+Coming soon!
+
 <br/>
 
 ## Options as props
-
-<br/>
-
-## License
