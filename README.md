@@ -16,13 +16,17 @@ A built-in global-state-management toast notification library for React web appl
 
 ✅ Available on desktop, tablet, mobile
 
+✅ Minimal design
+
 ✅ Ready for iOS safe area
 
 ✅ New features to upadate every weekend!
 
 <br/>
 
-## Motivation
+## Motivation ✨
+
+I'm designing & developing the React product system for React web applications these days.
 
 <br/>
 
@@ -48,6 +52,8 @@ yarn add @dalgu/react-toast
 
 `ToastProvider`
 
+`react-toast` includes a <ToastProvider /> component, which makes the toast available everywhere of your app when you need notification for user.
+
 ```jsx
 import { ToastProvider } from '@dalgu/react-toast';
 
@@ -64,6 +70,7 @@ ReactDOM.render(
 #### Hooks
 
 `useToast`
+`react-toast` provides custom React hooks that allow the toast notification to show to the user.
 
 ```jsx
 import { useToast } from '@dalgu/react-toast';
@@ -73,7 +80,7 @@ const App = () => {
 
   return (
     <>
-      <button onClick={() => showToast("I'm react-toast!")}>showToast</button>
+      <button onClick={() => showToast("I'm React Toast!")}>showToast</button>
     </>
   );
 };
@@ -85,7 +92,7 @@ const App = () => {
 
 <br/>
 
-## New features scheduled to update
+## New features scheduled to update 💡
 
 - [ ] customizable style
 - [ ] customizable motion
@@ -100,6 +107,20 @@ const App = () => {
 ## Demo
 
 Coming soon!
+
+<br/>
+
+## Thanks to 🙏
+
+- [ReactJS](https://reactjs.org/)
+
+- [NextJS](https://nextjs.org/)
+
+- [Styled-Components](https://github.com/styled-components/styled-components)
+
+- [Framer-Motion](https://github.com/framer/motion)
+
+- [Typescript](https://www.typescriptlang.org/)
 
 <br/>
 
