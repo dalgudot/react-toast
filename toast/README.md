@@ -123,7 +123,7 @@ ReactDOM.render(
 - [ ] Remove dependency styled-components
 - [ ] Remove dependency framer-motion
 - [ ] add test
-- [ ] ...more new feature!
+- [ ] ...more new features!
 
 <br/>
 
@@ -135,15 +135,15 @@ Coming soon!
 
 ## Thanks to 🙏
 
-- [ReactJS](https://reactjs.org/)
+[ReactJS](https://reactjs.org/)
 
-- [NextJS](https://nextjs.org/)
+[NextJS](https://nextjs.org/)
 
-- [Styled-Components](https://github.com/styled-components/styled-components)
+[Styled-Components](https://github.com/styled-components/styled-components)
 
-- [Framer-Motion](https://github.com/framer/motion)
+[Framer-Motion](https://github.com/framer/motion)
 
-- [Typescript](https://www.typescriptlang.org/)
+[Typescript](https://www.typescriptlang.org/)
 
 <br/>
 
