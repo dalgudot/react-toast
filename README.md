@@ -52,7 +52,7 @@ yarn add @dalgu/react-toast
 
 `ToastProvider`
 
-`react-toast` includes a <ToastProvider /> component, which makes the toast available everywhere of your app when you need notification for user.
+react-toast includes a `<ToastProvider />` component, which makes the toast available everywhere of your app when you need notification for user.
 
 ```jsx
 import { ToastProvider } from '@dalgu/react-toast';
@@ -70,7 +70,8 @@ ReactDOM.render(
 #### Hooks
 
 `useToast`
-`react-toast` provides custom React hooks that allow the toast notification to show to the user.
+
+react-toast provides custom React hooks `useToast` that allow the toast notification to show to the user.
 
 ```jsx
 import { useToast } from '@dalgu/react-toast';
