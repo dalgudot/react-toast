@@ -48,13 +48,15 @@ yarn add @dalgu/react-toast
 
 <br/>
 
-## Options as props
+## API
+
+### Props
 
 <br/>
 
 ## New features scheduled to update
 
-- [] customizable style
+- [ ] customizable style
 
 <br/>
 
