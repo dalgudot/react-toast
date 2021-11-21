@@ -144,15 +144,15 @@ Coming soon!
 
 ## Thanks to 🙏
 
-<a href="https://github.com/styled-components/styled-components" target="_blank">styled-components</a>
+[styled-components](https://github.com/styled-components/styled-components)
 
-<a href="https://github.com/framer/motion" target="_blank">framer-motion</a>
+[framer-motion](https://github.com/framer/motion)
 
 <br/>
 
 ## Contact
 
-<a href="mailto:dalgudot@gmail.com" target="_blank">dalgudot@gmail.com</a>
+[dalgudot@gmail.com](mailto:dalgudot@gmail.com)
 
 <br/>
 
