@@ -48,7 +48,7 @@ yarn add @dalgu/react-toast
 
 ## Usage
 
-#### API
+### API
 
 React Toast includes a `<ToastProvider />` component, which makes the toast available everywhere of your app when you need notification for user.
 
@@ -65,7 +65,7 @@ ReactDOM.render(
 
 <br/>
 
-#### Hooks
+### Hooks
 
 React Toast provides a custom React hooks `useToast` that allow the toast notification to show to the user.
 
