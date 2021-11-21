@@ -121,8 +121,8 @@ ReactDOM.render(
 - Customizable position
 - Multiple toast notifications
 - Advanced reponsive design
-- Remove dependency styled-components
-- Remove dependency framer-motion
+- Remove dependency `styled-components`
+- Remove dependency `framer-motion`
 - add test
 - ...more new features!
 
@@ -136,15 +136,9 @@ Coming soon!
 
 ## Thanks to 🙏
 
-[ReactJS](https://reactjs.org/)
-
-[NextJS](https://nextjs.org/)
-
 [Styled-Components](https://github.com/styled-components/styled-components)
 
 [Framer-Motion](https://github.com/framer/motion)
-
-[Typescript](https://www.typescriptlang.org/)
 
 <br/>
 

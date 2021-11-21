@@ -28,7 +28,7 @@ A built-in global-state-management toast notification library for React web appl
 
 As a product designer, I think the toast notification is essential for interaction with users. The toast is a good way to send feedback to user's actions in a digital product. In other words, the toast is a good way to interact with users. So I frequently use the toast in my product for interaction with users.
 
-But the toast is difficult to develop. The primary reason is global-state-management. Global-state-management is needed because the toast can be used anywhere in a digital product. The excellent solution is to reuse one toast component importing with `<App />.` This means we no longer have to import the `<Toast />` component whenever we need toast anymore.
+But the toast is difficult to develop. The primary reason is global-state-management. Global-state-management is needed because the toast can be used anywhere in a digital product. The excellent solution is to reuse one toast component. This means we no longer have to import the `<Toast />` component whenever we need the toast.
 
 `react-toast` is the result of thinking. With `react-toast`, you don't have to worry about state management of the toast notification. Just write the message, show the toast!
 
@@ -54,7 +54,7 @@ yarn add @dalgu/react-toast
 
 ### API
 
-React Toast includes a `<ToastProvider />` component, which makes the toast available everywhere of your app when you need notification for user.
+`react-toast` includes a `<ToastProvider />` component, which makes the toast available everywhere of your app when you need notification for user.
 
 ```jsx
 import { ToastProvider } from '@dalgu/react-toast';
@@ -71,7 +71,7 @@ ReactDOM.render(
 
 ### Hooks
 
-React Toast provides a custom React hooks `useToast` that allow the toast notification to show to the user.
+`react-toast` provides a custom React hooks `useToast` that allow the toast notification to show to the user.
 
 ```jsx
 import { useToast } from '@dalgu/react-toast';
@@ -97,6 +97,7 @@ const App = () => {
 | `zIndex`   | `number?` | 100000  | Set the CSS property `z-index`     |
 
 <br/>
+<br/>
 
 You can use the `Options as props` like the below example. All `Options as props` are optional props. I will add more props `Options as props` in the future.
 
@@ -115,15 +116,15 @@ ReactDOM.render(
 
 ## New features scheduled to update 💡
 
-- [ ] Customizable style
-- [ ] Customizable motion
-- [ ] Customizable position
-- [ ] Multiple toast notifications
-- [ ] Advanced reponsive design
-- [ ] Remove dependency styled-components
-- [ ] Remove dependency framer-motion
-- [ ] add test
-- [ ] ...more new features!
+- Customizable style
+- Customizable motion
+- Customizable position
+- Multiple toast notifications
+- Advanced reponsive design
+- Remove dependency `styled-components`
+- Remove dependency `framer-motion`
+- add test
+- ...more new features!
 
 <br/>
 
@@ -135,15 +136,9 @@ Coming soon!
 
 ## Thanks to 🙏
 
-[ReactJS](https://reactjs.org/)
-
-[NextJS](https://nextjs.org/)
-
 [Styled-Components](https://github.com/styled-components/styled-components)
 
 [Framer-Motion](https://github.com/framer/motion)
-
-[Typescript](https://www.typescriptlang.org/)
 
 <br/>
 

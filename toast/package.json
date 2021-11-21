@@ -1,5 +1,6 @@
 {
   "name": "@dalgu/react-toast",
+  "description": "A built-in global-state-management toast notification library for React web application",
   "version": "0.1.23",
   "author": "KyungHwan Kim",
   "license": "MIT",
@@ -19,6 +20,19 @@
     "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why"
+  },
+  "keywords": [
+    "react",
+    "toast",
+    "toast-notification"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dalgudot/react-toast"
+  },
+  "homepage": "https://github.com/dalgudot/react-toast#readme",
+  "bugs": {
+    "url": "https://github.com/dalgudot/react-toast/issues"
   },
   "peerDependencies": {
     "react": ">=17"
