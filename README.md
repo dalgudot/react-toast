@@ -20,6 +20,12 @@ A built-in global-state-management toast notification library for React web appl
 
 <br/>
 
+## Motivation
+
+<br/>
+
+## Installation
+
 If you use npm:
 
 ```
@@ -42,17 +48,19 @@ yarn add @dalgu/react-toast
 
 <br/>
 
-## Motivation
+## Options as props
 
 <br/>
 
-## Documentation
+## New features scheduled to update
+
+- [] customizable style
+
+<br/>
+
+## Demo
 
 Coming soon!
-
-<br/>
-
-## Options as props
 
 <br/>
 

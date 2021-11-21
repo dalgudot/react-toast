@@ -6,6 +6,8 @@
 
 A built-in global-state-management toast notification library for React web application
 
+<br/>
+
 ✅ Built-in global-state-management
 
 ✅ Easy to use
@@ -18,9 +20,19 @@ A built-in global-state-management toast notification library for React web appl
 
 <br/>
 
+## Motivation
+
+<br/>
+
+## Installation
+
+If you use npm:
+
 ```
 npm i @dalgu/react-toast
 ```
+
+If you use yarn:
 
 ```
 yarn add @dalgu/react-toast
@@ -28,25 +40,29 @@ yarn add @dalgu/react-toast
 
 <br/>
 
-## Motivation
-
-<br/>
-
-## Motivation
-
-<br/>
-
-## How to use
+## Usage
 
 ```jsx
 ```
 
 <br/>
 
-## Documentation
+## Options as props
+
+<br/>
+
+## New features scheduled to update
+
+- [] customizable style
+
+<br/>
+
+## Demo
 
 Coming soon!
 
 <br/>
 
-## Options as props
+## License
+
+[MIT](https://github.com/dalgudot/react-toast/blob/main/LICENSE)
