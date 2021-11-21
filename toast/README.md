@@ -2,7 +2,7 @@
 [![npm version](https://img.shields.io/npm/v/@dalgu/react-toast.svg)](https://www.npmjs.com/package/@dalgu/react-toast)
 [![npm](https://img.shields.io/npm/dm/@dalgu/react-toast.svg)](https://www.npmjs.com/package/@dalgu/react-toast)
 
-# react-toast
+# react-toast `BETA`
 
 A built-in global-state-management toast notification library for React web application
 
@@ -26,7 +26,11 @@ A built-in global-state-management toast notification library for React web appl
 
 ## Motivation ✨
 
-I'm designing & developing the React product system for React web applications these days.
+As a product designer, I think the toast notification is essential for interaction with users. The toast is a good way to send feedback to user's actions in a digital product. In other words, the toast is a good way to interact with users. So I frequently use the toast in my product for interaction with users.
+
+But the toast is difficult to develop. The primary reason is global-state-management. Global-state-management is needed because the toast can be used anywhere in a digital product. The excellent solution is to reuse one toast component importing with `<App />.` This means we no longer have to import the `<Toast />` component whenever we need toast anymore.
+
+`react-toast` is the result of thinking. With `react-toast`, you don't have to worry about state management of the toast notification. Just write the message, show the toast!
 
 <br/>
 
@@ -48,7 +52,7 @@ yarn add @dalgu/react-toast
 
 ## Usage
 
-#### API
+### API
 
 React Toast includes a `<ToastProvider />` component, which makes the toast available everywhere of your app when you need notification for user.
 
@@ -65,7 +69,7 @@ ReactDOM.render(
 
 <br/>
 
-#### Hooks
+### Hooks
 
 React Toast provides a custom React hooks `useToast` that allow the toast notification to show to the user.
 
@@ -111,11 +115,13 @@ ReactDOM.render(
 
 ## New features scheduled to update 💡
 
-- [ ] customizable style
-- [ ] customizable motion
-- [ ] customizable position
-- [ ] multiple toast notifications
-- [ ] advanced reponsive design
+- [ ] Customizable style
+- [ ] Customizable motion
+- [ ] Customizable position
+- [ ] Multiple toast notifications
+- [ ] Advanced reponsive design
+- [ ] Remove dependency styled-components
+- [ ] Remove dependency framer-motion
 - [ ] add test
 - [ ] ...more new feature!
 
