@@ -44,7 +44,9 @@ yarn add @dalgu/react-toast
 
 ## Usage
 
-#### API `ToastProvider`
+#### API
+
+`ToastProvider`
 
 ```jsx
 import { ToastProvider } from '@dalgu/react-toast';
@@ -59,7 +61,9 @@ ReactDOM.render(
 
 <br/>
 
-#### Hook `useToast`
+#### Hooks
+
+`useToast`
 
 ```jsx
 import { useToast } from '@dalgu/react-toast';
@@ -73,8 +77,6 @@ const App = () => {
     </>
   );
 };
-
-export default App;
 ```
 
 <br/>

@@ -44,14 +44,44 @@ yarn add @dalgu/react-toast
 
 ## Usage
 
+#### API
+
+`ToastProvider`
+
 ```jsx
+import { ToastProvider } from '@dalgu/react-toast';
+
+ReactDOM.render(
+  <ToastProvider>
+    <App />
+  </ToastProvider>,
+  document.getElementById('root')
+);
 ```
 
 <br/>
 
-## API
+#### Hooks
 
-### Props
+`useToast`
+
+```jsx
+import { useToast } from '@dalgu/react-toast';
+
+const App = () => {
+  const { showToast } = useToast();
+
+  return (
+    <>
+      <button onClick={() => showToast("I'm react-toast!")}>showToast</button>
+    </>
+  );
+};
+```
+
+<br/>
+
+## Options as props
 
 <br/>
 
