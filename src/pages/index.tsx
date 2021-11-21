@@ -12,7 +12,17 @@ const Index: NextPage = () => {
           <p>Go to about</p>
         </a>
       </Link>
-      <button onClick={() => showToast('This page is Index')}>showToast</button>
+      <button
+        onClick={() =>
+          showToast(
+            `This page is Index
+This page is Index
+This page is Index`
+          )
+        }
+      >
+        showToast
+      </button>
     </>
   );
 };

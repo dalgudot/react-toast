@@ -20,13 +20,13 @@ export const useToastStateContext = () => useContext(ToastStateContext);
  */
 
 export type OptionsType = {
-  duration: number;
-  zIndex: number;
+  duration?: number;
+  zIndex?: number;
 };
 
 export const INITIAL_STATE_OPTIONS: OptionsType = {
   duration: 2000,
-  zIndex: 8,
+  zIndex: 100000,
 };
 
 export const OptionsContext = createContext(INITIAL_STATE_OPTIONS);

@@ -20,6 +20,8 @@ export const useToast = () => {
   };
 
   const optionsContext = useOptionsContext();
+  console.log(optionsContext);
+
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       toastToggleState &&
@@ -27,7 +29,7 @@ export const useToast = () => {
           toastToggle: false,
           toastMessage: toastMessageState,
         });
-    }, optionsContext.duration);
+    }, optionsContext.duration ?? 2000);
 
     return () => {
       clearTimeout(timeoutId);
