@@ -58,4 +58,4 @@ Coming soon!
 
 ## License
 
-[MIT](LICENSE.md)
+[MIT](https://github.com/dalgudot/react-toast/blob/main/LICENSE)
