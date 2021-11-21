@@ -26,11 +26,9 @@ A built-in global-state-management toast notification library for React web appl
 
 ## Motivation ✨
 
-As a product designer, I think the toast notification is essential for interaction with users in a digital product. The toast is a good way to send a feedback to user's action. In other words, the toast is a good way to interact with a user. So I frequently use the toast in my product for interaction with users.
+As a product designer, I think the toast notification is essential for interaction with users in a digital product. The toast is a good way to send feedback to user's actions. In other words, the toast is a good way to interact with a user. So I frequently use the toast in my product for interaction with users.
 
-But the toast is difficult to develop. The primary reason is global-state-management. Global-state-management is needed because the toast can be used anywhere in a digital product. It is also necessary to continuously show the toast even if the page changes, just like a mobile native app.
-
-The best solution is to reuse one toast component. This means we no longer have to import the `<Toast />` component whenever we need the toast.
+But the toast is challenging to develop. The primary reason is global-state-management. Global-state-management is needed because the toast should be used anywhere in a digital product. It is also necessary to continuously show the toast even if the page changes for building a modern web application, just like a mobile native app.
 
 `react-toast` is the result of thinking. With `react-toast`, you don't have to worry about state management of the toast notification. **Just write the message, show the toast!**
 
