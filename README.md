@@ -12,7 +12,9 @@ A built-in global-state-management toast notification library for React web appl
 
 ✅ Easy to use
 
-✅ Available on desktop, tablet, mobile, any environment
+✅ Available in both JavaScript and TypeScript
+
+✅ Available on desktop, tablet, mobile
 
 ✅ Ready for iOS safe area
 
@@ -57,6 +59,12 @@ yarn add @dalgu/react-toast
 ## New features scheduled to update
 
 - [ ] customizable style
+- [ ] customizable motion
+- [ ] customizable position
+- [ ] multipul toast notifications
+- [ ] advanced reponsive design
+- [ ] add test
+- [ ] ...more new feature!
 
 <br/>
 
