@@ -20,7 +20,7 @@ export const useToast = () => {
   };
 
   const optionsContext = useOptionsContext();
-  console.log(optionsContext);
+  // console.log(optionsContext);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {

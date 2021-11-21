@@ -44,15 +44,42 @@ yarn add @dalgu/react-toast
 
 ## Usage
 
-```jsx
+#### API `ToastProvider`
 
+```jsx
+import { ToastProvider } from '@dalgu/react-toast';
+
+ReactDOM.render(
+  <ToastProvider>
+    <App />
+  </ToastProvider>,
+  document.getElementById('root')
+);
 ```
 
 <br/>
 
-## API
+#### Hook `useToast`
 
-### Props
+```jsx
+import { useToast } from '@dalgu/react-toast';
+
+const App = () => {
+  const { showToast } = useToast();
+
+  return (
+    <>
+      <button onClick={() => showToast("I'm react-toast!")}>showToast</button>
+    </>
+  );
+};
+
+export default App;
+```
+
+<br/>
+
+## Options as props
 
 <br/>
 
@@ -61,7 +88,7 @@ yarn add @dalgu/react-toast
 - [ ] customizable style
 - [ ] customizable motion
 - [ ] customizable position
-- [ ] multipul toast notifications
+- [ ] multiple toast notifications
 - [ ] advanced reponsive design
 - [ ] add test
 - [ ] ...more new feature!

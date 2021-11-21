@@ -60,7 +60,7 @@ yarn add @dalgu/react-toast
 - [ ] customizable style
 - [ ] customizable motion
 - [ ] customizable position
-- [ ] multipul toast notifications
+- [ ] multiple toast notifications
 - [ ] advanced reponsive design
 - [ ] add test
 - [ ] ...more new feature!
