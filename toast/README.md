@@ -26,7 +26,7 @@ A built-in global-state-management toast notification library for React web appl
 
 ## Motivation ✨
 
-As a product designer, I think the toast notification is essential for interaction with users in a digital product. The toast is a good way to send feedback to user's actions. In other words, the toast is a good way to interact with a user. So I frequently use the toast in my product for interaction with users.
+As a digital product designer, I think the toast notification is essential for interaction with users in a digital product. The toast is a good way to send feedback to user's actions. In other words, the toast is a good way to interact with a user. So I frequently use the toast in my product for interaction with users.
 
 But the toast is challenging to develop. The primary reason is global-state-management. Global-state-management is needed because the toast should be used anywhere in a digital product. It is also necessary to continuously show the toast even if the page changes for building a modern web application, just like a mobile native app.
 
