@@ -2,7 +2,7 @@
 [![npm version](https://img.shields.io/npm/v/@dalgu/react-toast.svg)](https://www.npmjs.com/package/@dalgu/react-toast)
 [![npm](https://img.shields.io/npm/dm/@dalgu/react-toast.svg)](https://www.npmjs.com/package/@dalgu/react-toast)
 
-# react-toast `BETA`
+# react-toast
 
 A built-in global-state-management toast notification library for React web application
 
@@ -20,7 +20,7 @@ A built-in global-state-management toast notification library for React web appl
 
 ✅ Ready for iOS safe area
 
-✅ New features to upadate every weekend!
+✅ New features to update every month!
 
 <br/>
 
@@ -125,10 +125,6 @@ ReactDOM.render(
 ✔️ Multiple toast notifications
 
 ✔️ Advanced reponsive design
-
-✔️ Remove dependency `styled-components`
-
-✔️ Remove dependency `framer-motion`
 
 ✔️ add test
 

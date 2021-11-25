@@ -2,12 +2,13 @@ import { AnimatePresence, motion } from 'framer-motion';
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { useOptionsDispatchContext } from './reducer';
-import { OptionsType, useOptionsContext } from './state';
-import { useToast } from './useToast';
+import { OptionsType, useOptionsContext, useToastStateContext } from './state';
 import { toastVariants } from './variants';
 
 export const Toast = ({ optionsPayload }: { optionsPayload: OptionsType }) => {
-  const { toastToggleState, toastMessageState } = useToast();
+  const toastState = useToastStateContext();
+  const toastToggleState = toastState.toastToggle;
+  const toastMessageState = toastState.toastMessage;
 
   const optionsDispatchContext = useOptionsDispatchContext();
   const setOptions = (optionsPayload: OptionsType) => {
