@@ -7,7 +7,6 @@ function ReactToastApp({ Component, pageProps }: AppProps) {
   return (
     <Main>
       <ToastProvider duration={2} zIndex={10000}>
-        {/* <ToastProvider> */}
         <Component {...pageProps} />
       </ToastProvider>
     </Main>
