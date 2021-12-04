@@ -1,5 +1,5 @@
 import React from 'react';
-import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect } from 'react';
 import styled from 'styled-components';
 import { useOptionsDispatchContext } from './reducers/options-reducer';
@@ -10,7 +10,11 @@ import {
 } from './state/toast-state';
 import { toastVariants } from './variants';
 
-export const Toast = ({ optionsPayload }: { optionsPayload: OptionsType }) => {
+export const Toast = React.memo(function Toast({
+  optionsPayload,
+}: {
+  optionsPayload: OptionsType;
+}) {
   const toastState = useToastStateContext();
 
   const optionsDispatchContext = useOptionsDispatchContext();
@@ -30,29 +34,32 @@ export const Toast = ({ optionsPayload }: { optionsPayload: OptionsType }) => {
 
   return (
     <>
-      <LayoutGroup>
-        <ToastPositionUl zindex={zindex} layout>
-          <AnimatePresence>
-            {toastState.length !== 0 &&
-              toastState.map((state: ToastStateElementsType, idx: number) => (
+      <ToastPositionUl key="ToastPositionUl" zindex={zindex}>
+        <AnimatePresence>
+          {toastState.length !== 0 &&
+            toastState
+              .map((state: ToastStateElementsType, _idx: number) => (
                 <Li
-                  key={idx}
+                  key={state}
                   variants={toastVariants}
                   initial="initial"
                   animate="animate"
-                  exit="initial"
+                  exit={{
+                    opacity: 0,
+                    scale: 0.7,
+                    transition: { duration: 0.3 },
+                  }}
                   layout
-                  transition={{ duration: 0.2 }}
                 >
-                  <Text>{state.toastMessage}</Text>
+                  <Text>{state}</Text>
                 </Li>
-              ))}
-          </AnimatePresence>
-        </ToastPositionUl>
-      </LayoutGroup>
+              ))
+              .reverse()}
+        </AnimatePresence>
+      </ToastPositionUl>
     </>
   );
-};
+});
 // <AnimatePresence>'s child motion components must each have a unique key prop so AnimatePresence can track their presence in the tree.
 
 const ToastPositionUl = styled(motion.ul)<{ zindex?: number }>`
@@ -74,6 +81,7 @@ const ToastPositionUl = styled(motion.ul)<{ zindex?: number }>`
   /* For multiple children toast */
   display: flex;
   flex-direction: column;
+  /* justify-content: flex-end; */
   /* For multiple children toast */
 
   @media all and (max-width: 768px) {
@@ -111,7 +119,7 @@ const Li = styled(motion.li)`
   /* For multiple children toast */
 `;
 
-const Text = styled.p`
+const Text = styled(motion.p)`
   white-space: pre-wrap;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;

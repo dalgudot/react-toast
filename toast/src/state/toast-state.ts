@@ -1,10 +1,8 @@
 import { createContext, useContext } from 'react';
 
-export type ToastStateType = { toastToggle: boolean; toastMessage: string }[];
-export type ToastStateElementsType = {
-  toastToggle: boolean;
-  toastMessage: string;
-}; // the type for map() in toast.tsx
+export type ToastStateType = string[]; // just message
+export type ToastStateElementsType = string;
+// the type for map() in toast.tsx
 
 export const INITIAL_STATE_TOAST: ToastStateType = [];
 
