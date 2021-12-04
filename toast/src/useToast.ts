@@ -1,50 +1,49 @@
 import { useEffect } from 'react';
-import { useToastDispatchContext } from './reducer';
-import {
-  ToastStateType,
-  useOptionsContext,
-  useToastStateContext,
-} from './state';
+import { useToastDispatchContext } from './reducers/toast-reducer';
+import { useOptionsStateContext } from './state/options-state';
+import { ToastStateType, useToastStateContext } from './state/toast-state';
 
 export const useToast = () => {
   const toastState = useToastStateContext();
-  const toastToggleState = toastState.toastToggle;
-  const toastMessageState = toastState.toastMessage;
-
   const toastDispatchContext = useToastDispatchContext();
-  const setToast = (toast: ToastStateType) => {
+  const setMultipleToast = (toastPayload: ToastStateType) => {
     toastDispatchContext({
-      type: 'SET_TOAST',
-      payload: toast,
+      type: 'SHOW_TOAST',
+      payload: toastPayload,
     });
   };
 
-  const optionsContext = useOptionsContext();
+  const hideToast = (_?: any) => {
+    toastDispatchContext({
+      type: 'HIDE_TOAST',
+      payload: _,
+    });
+  };
+
+  const optionsContext = useOptionsStateContext();
   const duration = optionsContext.duration
-    ? optionsContext.duration * 1000 // second
+    ? optionsContext.duration * 1000 // To make a 'second unit'
     : 2000;
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      toastToggleState &&
-        setToast({
-          toastToggle: false,
-          toastMessage: toastMessageState,
-        });
+      hideToast();
     }, duration);
 
     return () => {
+      console.log('cleanTimeout');
       clearTimeout(timeoutId);
     };
-  }, [toastToggleState]);
+  }, [toastState.length]);
 
   const showToast = (message: string) => {
-    if (toastToggleState === false) {
-      setToast({
+    setMultipleToast([
+      ...toastState,
+      {
         toastToggle: true,
         toastMessage: message,
-      });
-    }
+      },
+    ]);
   };
 
   return { showToast };
