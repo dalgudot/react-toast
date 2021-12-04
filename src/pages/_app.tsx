@@ -6,7 +6,7 @@ import styled from 'styled-components';
 function ReactToastApp({ Component, pageProps }: AppProps) {
   return (
     <Main>
-      <ToastProvider duration={2} zIndex={10000}>
+      <ToastProvider duration={4} zIndex={10000}>
         <Component {...pageProps} />
       </ToastProvider>
     </Main>

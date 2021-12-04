@@ -17,17 +17,26 @@ export const toastReducer: Reducer<ToastStateType, ToastActionType> = (
   state: ToastStateType,
   action: ToastActionType
 ) => {
-  console.log('state: ', state);
+  // console.log('state: ', state);
 
   switch (action.type) {
     case 'SHOW_TOAST':
       return action.payload;
 
     case 'HIDE_TOAST':
-      // state.splice(0, 1);
-      state.shift();
+      // Remove the first array element
+      // state.shift();
+
+      state.splice(0, 1);
+      console.log(state.length);
+      // state.splice(state.length - 1, 1);
+
+      // state.splice(
+      //   state.findIndex((i) => i === action.payload[0]),
+      //   1
+      // );
       console.log('update state', state);
-      return [...state]; // remove first array element
+      return [...state];
 
     default:
       throw new Error(`Unknown action: ${action.type}`);

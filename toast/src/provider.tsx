@@ -1,12 +1,9 @@
-import { AnimatePresence } from 'framer-motion';
 import React, { useReducer } from 'react';
-import { CountDispatchContext, countReducer } from './reducers/count-reducer';
 import {
   OptionsDispatchContext,
   optionsReducer,
 } from './reducers/options-reducer';
 import { ToastDispatchContext, toastReducer } from './reducers/toast-reducer';
-import { CountStateContext, INITIAL_STATE_COUNT } from './state/count-state';
 import {
   INITIAL_STATE_OPTIONS,
   OptionsStateContext,
@@ -32,10 +29,6 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
     optionsReducer,
     INITIAL_STATE_OPTIONS
   );
-  const [countState, countDispatch] = useReducer(
-    countReducer,
-    INITIAL_STATE_COUNT
-  );
 
   const optionsPayload: OptionsType = { duration, zIndex };
 
@@ -45,12 +38,8 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
         <ToastStateContext.Provider value={toastState}>
           <OptionsDispatchContext.Provider value={optionsDispatch}>
             <OptionsStateContext.Provider value={optionsState}>
-              <CountDispatchContext.Provider value={countDispatch}>
-                <CountStateContext.Provider value={countState}>
-                  {children}
-                  <Toast optionsPayload={optionsPayload} />
-                </CountStateContext.Provider>
-              </CountDispatchContext.Provider>
+              <Toast optionsPayload={optionsPayload} />
+              {children}
             </OptionsStateContext.Provider>
           </OptionsDispatchContext.Provider>
         </ToastStateContext.Provider>

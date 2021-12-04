@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useToastDispatchContext } from './reducers/toast-reducer';
 import { useOptionsStateContext } from './state/options-state';
 import { ToastStateType, useToastStateContext } from './state/toast-state';
@@ -13,7 +13,9 @@ export const useToast = () => {
     });
   };
 
-  const hideToast = (_?: any) => {
+  const [toastMessage, setToastMessage] = useState(['']);
+
+  const hideToast = (_: ToastStateType) => {
     toastDispatchContext({
       type: 'HIDE_TOAST',
       payload: _,
@@ -25,25 +27,32 @@ export const useToast = () => {
     ? optionsContext.duration * 1000 // To make a 'second unit'
     : 2000;
 
+  // https://github.com/facebook/react/issues/14010
+  const [count, setCount] = useState<any>();
+  const prevCountRef = useRef(count);
+
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      hideToast();
+      hideToast(['_']);
     }, duration);
+    setCount(timeoutId);
+    prevCountRef.current = count;
 
     return () => {
-      console.log('cleanTimeout');
-      clearTimeout(timeoutId);
+      timeoutId && clearTimeout(timeoutId);
     };
   }, [toastState.length]);
 
+  useEffect(() => {
+    setToastMessage(toastState);
+    console.log(toastState);
+  }, [toastState]);
+
   const showToast = (message: string) => {
-    setMultipleToast([
-      ...toastState,
-      {
-        toastToggle: true,
-        toastMessage: message,
-      },
-    ]);
+    if (toastMessage.indexOf(message) === -1) {
+      setToastMessage((prev) => [...prev, message]);
+      setMultipleToast([...toastState, message]);
+    }
   };
 
   return { showToast };
