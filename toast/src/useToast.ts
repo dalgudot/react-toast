@@ -49,6 +49,8 @@ export const useToast = () => {
   }, [toastState]);
 
   const showToast = (message: string) => {
+    // Key duplication prevention of <Li> in toast.tsx
+    // Toast duplication prevention for UX
     if (toastMessage.indexOf(message) === -1) {
       setToastMessage((prev) => [...prev, message]);
       setMultipleToast([...toastState, message]);
