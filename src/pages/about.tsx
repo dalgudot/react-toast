@@ -12,7 +12,11 @@ const About: NextPage = () => {
           <p>Go to index</p>
         </a>
       </Link>
-      <button onClick={() => showToast('This page is About')}>showToast</button>
+      <button onClick={() => showToast('1')}>showToast</button>
+      <button onClick={() => showToast('2')}>showToast</button>
+      <button onClick={() => showToast('3')}>showToast</button>
+      <button onClick={() => showToast('4')}>showToast</button>
+      <button onClick={() => showToast('5')}>showToast</button>
     </>
   );
 };

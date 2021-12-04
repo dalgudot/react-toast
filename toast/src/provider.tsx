@@ -1,17 +1,18 @@
+import { AnimatePresence } from 'framer-motion';
 import React, { useReducer } from 'react';
+import { CountDispatchContext, countReducer } from './reducers/count-reducer';
 import {
   OptionsDispatchContext,
   optionsReducer,
-  ToastDispatchContext,
-  toastReducer,
-} from './reducer';
+} from './reducers/options-reducer';
+import { ToastDispatchContext, toastReducer } from './reducers/toast-reducer';
+import { CountStateContext, INITIAL_STATE_COUNT } from './state/count-state';
 import {
-  ToastStateContext,
-  INITIAL_STATE,
   INITIAL_STATE_OPTIONS,
-  OptionsContext,
+  OptionsStateContext,
   OptionsType,
-} from './state';
+} from './state/options-state';
+import { ToastStateContext, INITIAL_STATE_TOAST } from './state/toast-state';
 import { Toast } from './toast';
 
 interface ToastProviderProps extends OptionsType {
@@ -23,10 +24,17 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
   zIndex,
   children,
 }) => {
-  const [toastState, toastDispatch] = useReducer(toastReducer, INITIAL_STATE);
+  const [toastState, toastDispatch] = useReducer(
+    toastReducer,
+    INITIAL_STATE_TOAST
+  );
   const [optionsState, optionsDispatch] = useReducer(
     optionsReducer,
     INITIAL_STATE_OPTIONS
+  );
+  const [countState, countDispatch] = useReducer(
+    countReducer,
+    INITIAL_STATE_COUNT
   );
 
   const optionsPayload: OptionsType = { duration, zIndex };
@@ -36,10 +44,14 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
       <ToastDispatchContext.Provider value={toastDispatch}>
         <ToastStateContext.Provider value={toastState}>
           <OptionsDispatchContext.Provider value={optionsDispatch}>
-            <OptionsContext.Provider value={optionsState}>
-              {children}
-              <Toast optionsPayload={optionsPayload} />
-            </OptionsContext.Provider>
+            <OptionsStateContext.Provider value={optionsState}>
+              <CountDispatchContext.Provider value={countDispatch}>
+                <CountStateContext.Provider value={countState}>
+                  {children}
+                  <Toast optionsPayload={optionsPayload} />
+                </CountStateContext.Provider>
+              </CountDispatchContext.Provider>
+            </OptionsStateContext.Provider>
           </OptionsDispatchContext.Provider>
         </ToastStateContext.Provider>
       </ToastDispatchContext.Provider>
