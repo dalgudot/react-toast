@@ -1,19 +1,19 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useToastDispatchContext } from './reducers/toast-reducer';
 import { useOptionsStateContext } from './state/options-state';
 import { ToastStateType, useToastStateContext } from './state/toast-state';
 
 export const useToast = () => {
   const toastState = useToastStateContext();
+  const [toastMessage, setToastMessage] = useState(['']);
+
   const toastDispatchContext = useToastDispatchContext();
-  const setMultipleToast = (toastPayload: ToastStateType) => {
+  const setToast = (toastPayload: ToastStateType) => {
     toastDispatchContext({
-      type: 'SHOW_TOAST',
+      type: 'SET_TOAST',
       payload: toastPayload,
     });
   };
-
-  const [toastMessage, setToastMessage] = useState(['']);
 
   const hideToast = (_: ToastStateType) => {
     toastDispatchContext({
@@ -28,32 +28,28 @@ export const useToast = () => {
     : 2000;
 
   // https://github.com/facebook/react/issues/14010
-  const [count, setCount] = useState<any>();
-  const prevCountRef = useRef(count);
-
+  // https://codesandbox.io/s/elastic-water-w6ikw?file=/src/index.js
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       hideToast(['_']);
     }, duration);
-    setCount(timeoutId);
-    prevCountRef.current = count;
 
     return () => {
-      timeoutId && clearTimeout(timeoutId);
+      clearTimeout(timeoutId);
     };
   }, [toastState.length]);
 
   useEffect(() => {
+    console.log('setToastMessage');
     setToastMessage(toastState);
-    console.log(toastState);
   }, [toastState]);
 
-  const showToast = (message: string) => {
+  const showToast = (message: string): void => {
     // Key duplication prevention of <Li> in toast.tsx
     // Toast duplication prevention for UX
     if (toastMessage.indexOf(message) === -1) {
       setToastMessage((prev) => [...prev, message]);
-      setMultipleToast([...toastState, message]);
+      setToast([...toastState, message]);
     }
   };
 

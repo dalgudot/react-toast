@@ -4,6 +4,7 @@ export const show = (arr: number[]) => {
   return [...arr, newIndex];
 };
 
+// The util to find a specific array element
 export const hide = (arr: number[], item: number) => {
   const newArr = [...arr];
   newArr.splice(
