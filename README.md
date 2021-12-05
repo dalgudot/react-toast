@@ -8,6 +8,10 @@ A built-in global-state-management toast notification library for React web appl
 
 <br/>
 
+![](https://raw.githubusercontent.com/dalgudot/react-toast/feature/multiple-toast/toast/public/%40dalgu%3Areact-toast%201.1.0.gif)
+
+<br/>
+
 ✅ Built-in global-state-management
 
 ✅ Easy to use
@@ -23,8 +27,6 @@ A built-in global-state-management toast notification library for React web appl
 ✅ Ready for iOS safe area
 
 ✅ New features to update every month!
-
-![](/toast/public/@dalgu:react-toast 1.1.0.gif)
 
 <br/>
 
