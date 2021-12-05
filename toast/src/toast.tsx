@@ -70,7 +70,7 @@ const ToastPositionUl = styled(motion.ul)<{ zindex?: number }>`
 
   z-index: ${({ zindex }) => zindex ?? 100000};
   position: fixed;
-  top: 36px;
+  top: 56px;
   left: 0;
   right: 0;
   margin: 0 auto;
