@@ -12,6 +12,8 @@ A built-in global-state-management toast notification library for React web appl
 
 ✅ Easy to use
 
+✅ Multiple toast notifications
+
 ✅ Available in both JavaScript and TypeScript
 
 ✅ Available on desktop, tablet, mobile
@@ -21,6 +23,8 @@ A built-in global-state-management toast notification library for React web appl
 ✅ Ready for iOS safe area
 
 ✅ New features to update every month!
+
+![](/toast/public/@dalgu:react-toast 1.1.0.gif)
 
 <br/>
 
@@ -115,13 +119,17 @@ ReactDOM.render(
 
 ## Version history
 
-### 1.1.0 `2021.12.05`
+### 1.1.0
+
+`2021.12.05`
 
 ✔️ Multiple toast notifications
 
 <br/>
 
-### 1.0.0 `2021.11.21`
+### 1.0.0
+
+`2021.11.21`
 
 ✔️ Built-in global-state-management
 
@@ -143,7 +151,7 @@ ReactDOM.render(
 
 ✔️ Customizable position
 
-✔️ ~~Multiple toast notifications~~ `2021.12.05`
+✔️ ~~Multiple toast notifications~~ `Completed on 2021.12.05`
 
 ✔️ Advanced reponsive design
 

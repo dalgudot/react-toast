@@ -1,12 +1,13 @@
 import { useToast } from '../../toast/src';
 import type { NextPage } from 'next';
 import Link from 'next/link';
+import styled from 'styled-components';
 
 const About: NextPage = () => {
   const { showToast } = useToast();
 
   return (
-    <>
+    <Main>
       <Link href="/">
         <a>
           <p>Go to index</p>
@@ -17,8 +18,14 @@ const About: NextPage = () => {
       <button onClick={() => showToast('3')}>showToast('3')</button>
       <button onClick={() => showToast('4')}>showToast('4')</button>
       <button onClick={() => showToast('5')}>showToast('5')</button>
-    </>
+    </Main>
   );
 };
 
 export default About;
+
+const Main = styled.main`
+  margin-top: 300px;
+  display: flex;
+  flex-direction: column;
+`;
