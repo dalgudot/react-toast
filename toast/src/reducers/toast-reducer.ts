@@ -9,7 +9,7 @@ import { ToastStateType } from '../state/toast-state';
 
 // https://www.newline.co/@bespoyasov/how-to-use-usereducer-with-typescript--3918a332
 export type ToastActionType = {
-  type: 'SHOW_TOAST' | 'HIDE_TOAST';
+  type: 'SET_TOAST' | 'HIDE_TOAST';
   payload: ToastStateType;
 };
 
@@ -20,22 +20,13 @@ export const toastReducer: Reducer<ToastStateType, ToastActionType> = (
   // console.log('state: ', state);
 
   switch (action.type) {
-    case 'SHOW_TOAST':
+    case 'SET_TOAST':
       return action.payload;
 
     case 'HIDE_TOAST':
-      // Remove the first array element
-      // state.shift();
-
+      // Remove the first array element // or I can use state.shift(); method
       state.splice(0, 1);
-      console.log(state.length);
-      // state.splice(state.length - 1, 1);
-
-      // state.splice(
-      //   state.findIndex((i) => i === action.payload[0]),
-      //   1
-      // );
-      console.log('update state', state);
+      // console.log('update state', state);
       return [...state];
 
     default:

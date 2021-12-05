@@ -40,16 +40,13 @@ export const Toast = React.memo(function Toast({
             toastState
               .map((state: ToastStateElementsType, _idx: number) => (
                 <Li
-                  key={state}
+                  key={state} // Use 'state' for normal working of framer motion
                   variants={toastVariants}
                   initial="initial"
                   animate="animate"
-                  exit={{
-                    opacity: 0,
-                    scale: 0.7,
-                    transition: { duration: 0.3 },
-                  }}
+                  exit="exit"
                   layout
+                  transition={{ duration: 0.3 }} // for layout
                 >
                   <Text>{state}</Text>
                 </Li>
@@ -61,6 +58,7 @@ export const Toast = React.memo(function Toast({
   );
 });
 // <AnimatePresence>'s child motion components must each have a unique key prop so AnimatePresence can track their presence in the tree.
+// https://codesandbox.io/s/framer-motion-notifications-5cvo9?file=/src/Example.tsx
 
 const ToastPositionUl = styled(motion.ul)<{ zindex?: number }>`
   /* S of CSS Reset */
@@ -81,7 +79,6 @@ const ToastPositionUl = styled(motion.ul)<{ zindex?: number }>`
   /* For multiple children toast */
   display: flex;
   flex-direction: column;
-  /* justify-content: flex-end; */
   /* For multiple children toast */
 
   @media all and (max-width: 768px) {
@@ -99,6 +96,8 @@ const Li = styled(motion.li)`
   div,
   p {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
   /* E of CSS Reset */
 
@@ -119,13 +118,11 @@ const Li = styled(motion.li)`
   /* For multiple children toast */
 `;
 
-const Text = styled(motion.p)`
+const Text = styled.p`
   white-space: pre-wrap;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-size: 18px;
-  margin: 0;
-  padding: 0;
+  font-size: 17px;
   color: #f5f5f5;
   line-height: 23px;
 `;
