@@ -97,7 +97,6 @@ const App = () => {
 | `zIndex`   | `number?` | 100000  | Set the CSS property `z-index`     |
 
 <br/>
-<br/>
 
 You can use the `Options as props` like the below example. All `Options as props` are optional props. I will add more props `Options as props` in the future.
 
@@ -114,6 +113,28 @@ ReactDOM.render(
 
 <br/>
 
+## Version history
+
+### 1.1.0 `2021.12.05`
+
+✔️ Multiple toast notifications
+
+<br/>
+
+### 1.0.0 `2021.11.21`
+
+✔️ Built-in global-state-management
+
+✔️ Available in both JavaScript and TypeScript
+
+✔️ Available on desktop, tablet, mobile
+
+✔️ Minimal design
+
+✔️ Ready for iOS safe area
+
+<br/>
+
 ## New features scheduled to update 💡
 
 ✔️ Customizable style
@@ -122,7 +143,7 @@ ReactDOM.render(
 
 ✔️ Customizable position
 
-✔️ Multiple toast notifications
+✔️ ~~Multiple toast notifications~~ `2021.12.05`
 
 ✔️ Advanced reponsive design
 

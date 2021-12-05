@@ -2,16 +2,14 @@ import React, { useReducer } from 'react';
 import {
   OptionsDispatchContext,
   optionsReducer,
-  ToastDispatchContext,
-  toastReducer,
-} from './reducer';
+} from './reducers/options-reducer';
+import { ToastDispatchContext, toastReducer } from './reducers/toast-reducer';
 import {
-  ToastStateContext,
-  INITIAL_STATE,
   INITIAL_STATE_OPTIONS,
-  OptionsContext,
+  OptionsStateContext,
   OptionsType,
-} from './state';
+} from './state/options-state';
+import { ToastStateContext, INITIAL_STATE_TOAST } from './state/toast-state';
 import { Toast } from './toast';
 
 interface ToastProviderProps extends OptionsType {
@@ -23,7 +21,10 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
   zIndex,
   children,
 }) => {
-  const [toastState, toastDispatch] = useReducer(toastReducer, INITIAL_STATE);
+  const [toastState, toastDispatch] = useReducer(
+    toastReducer,
+    INITIAL_STATE_TOAST
+  );
   const [optionsState, optionsDispatch] = useReducer(
     optionsReducer,
     INITIAL_STATE_OPTIONS
@@ -36,10 +37,10 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
       <ToastDispatchContext.Provider value={toastDispatch}>
         <ToastStateContext.Provider value={toastState}>
           <OptionsDispatchContext.Provider value={optionsDispatch}>
-            <OptionsContext.Provider value={optionsState}>
-              {children}
+            <OptionsStateContext.Provider value={optionsState}>
               <Toast optionsPayload={optionsPayload} />
-            </OptionsContext.Provider>
+              {children}
+            </OptionsStateContext.Provider>
           </OptionsDispatchContext.Provider>
         </ToastStateContext.Provider>
       </ToastDispatchContext.Provider>

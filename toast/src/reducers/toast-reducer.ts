@@ -1,5 +1,5 @@
 import { createContext, useContext, Reducer, Dispatch } from 'react';
-import { OptionsType, ToastStateType } from './state';
+import { ToastStateType } from '../state/toast-state';
 
 /** from 'react'
  * type Reducer<S, A> = (prevState: S, action: A) => S;
@@ -9,17 +9,25 @@ import { OptionsType, ToastStateType } from './state';
 
 // https://www.newline.co/@bespoyasov/how-to-use-usereducer-with-typescript--3918a332
 export type ToastActionType = {
-  type: 'SET_TOAST';
+  type: 'SET_TOAST' | 'HIDE_TOAST';
   payload: ToastStateType;
 };
 
 export const toastReducer: Reducer<ToastStateType, ToastActionType> = (
-  _state: ToastStateType,
+  state: ToastStateType,
   action: ToastActionType
 ) => {
+  // console.log('state: ', state);
+
   switch (action.type) {
     case 'SET_TOAST':
       return action.payload;
+
+    case 'HIDE_TOAST':
+      // Remove the first array element // or I can use state.shift(); method
+      state.splice(0, 1);
+      // console.log('update state', state);
+      return [...state];
 
     default:
       throw new Error(`Unknown action: ${action.type}`);
@@ -30,32 +38,3 @@ export const ToastDispatchContext = createContext(
   {} as Dispatch<ToastActionType>
 );
 export const useToastDispatchContext = () => useContext(ToastDispatchContext);
-
-/**
- *
- * Options Reducer
- *
- */
-export type OptionsActionType = {
-  type: 'SET_OPTIONS';
-  payload: OptionsType;
-};
-
-export const optionsReducer: Reducer<OptionsType, OptionsActionType> = (
-  _state: OptionsType,
-  action: OptionsActionType
-) => {
-  switch (action.type) {
-    case 'SET_OPTIONS':
-      return action.payload;
-
-    default:
-      throw new Error(`Unknown action: ${action.type}`);
-  }
-};
-
-export const OptionsDispatchContext = createContext(
-  {} as Dispatch<OptionsActionType>
-);
-export const useOptionsDispatchContext = () =>
-  useContext(OptionsDispatchContext);

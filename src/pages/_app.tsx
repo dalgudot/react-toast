@@ -23,7 +23,7 @@ const Main = styled.main`
 
   button {
     margin-top: 48px;
-    padding: 48px;
+    padding: 36px;
   }
 
   a {
