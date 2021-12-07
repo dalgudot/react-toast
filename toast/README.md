@@ -8,7 +8,7 @@ A built-in global-state-management toast notification library for React web appl
 
 <br/>
 
-![](https://raw.githubusercontent.com/dalgudot/react-toast/feature/multiple-toast/toast/public/%40dalgu%3Areact-toast%201.1.0.gif)
+![](https://raw.githubusercontent.com/dalgudot/react-toast/develop/toast/public/%40dalgu%3Areact-toast%201.1.2.gif)
 
 <br/>
 
