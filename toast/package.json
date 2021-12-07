@@ -1,7 +1,7 @@
 {
   "name": "@dalgu/react-toast",
   "description": "A built-in global-state-management toast notification library for React web application",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "KyungHwan Kim",
   "license": "MIT",
   "main": "dist/index.js",
