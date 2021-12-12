@@ -68,7 +68,7 @@ import { ToastProvider } from '@dalgu/react-toast';
 ReactDOM.render(
   <ToastProvider>
     <App />
-  </ToastProvider>,
+  </ToastProvider>
   document.getElementById('root')
 );
 ```
@@ -112,7 +112,7 @@ import { ToastProvider } from '@dalgu/react-toast';
 ReactDOM.render(
   <ToastProvider duration={3} zIndex={100}>
     <App />
-  </ToastProvider>,
+  </ToastProvider>
   document.getElementById('root')
 );
 ```
