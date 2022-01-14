@@ -34,7 +34,7 @@ export const Toast = React.memo(function Toast({
 
   return (
     <>
-      <ToastPositionUl key="ToastPositionUl" zindex={zindex}>
+      <ToastPositionUl key='ToastPositionUl' zindex={zindex}>
         <AnimatePresence>
           {toastState.length !== 0 &&
             toastState
@@ -42,9 +42,9 @@ export const Toast = React.memo(function Toast({
                 <Li
                   key={state} // Use 'state' for normal working of framer motion
                   variants={toastVariants}
-                  initial="initial"
-                  animate="animate"
-                  exit="exit"
+                  initial='initial'
+                  animate='animate'
+                  exit='exit'
                   layout
                   transition={{ duration: 0.3 }} // for layout
                 >

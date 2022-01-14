@@ -25,9 +25,9 @@ export const toastReducer: Reducer<ToastStateType, ToastActionType> = (
 
     case 'HIDE_TOAST':
       // Remove the first array element // or I can use state.shift(); method
-      state.splice(0, 1);
-      // console.log('update state', state);
-      return [...state];
+      const copyState = [...state]; // 불변성 유지 위해
+      copyState.splice(0, 1);
+      return copyState;
 
     default:
       throw new Error(`Unknown action: ${action.type}`);

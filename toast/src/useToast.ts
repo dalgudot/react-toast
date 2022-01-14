@@ -40,7 +40,6 @@ export const useToast = () => {
   }, [toastState.length]);
 
   useEffect(() => {
-    console.log('setToastMessage');
     setToastMessage(toastState);
   }, [toastState]);
 
