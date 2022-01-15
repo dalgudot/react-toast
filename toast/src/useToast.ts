@@ -1,11 +1,8 @@
-import { useEffect, useState } from 'react';
 import { useToastDispatchContext } from './reducers/toast-reducer';
-import { useOptionsStateContext } from './state/options-state';
 import { ToastStateType, useToastStateContext } from './state/toast-state';
 
 export const useToast = () => {
   const toastState = useToastStateContext();
-  const [toastMessage, setToastMessage] = useState(['']);
 
   const toastDispatchContext = useToastDispatchContext();
   const setToast = (toastPayload: ToastStateType) => {
@@ -15,39 +12,10 @@ export const useToast = () => {
     });
   };
 
-  const hideToast = (_: ToastStateType) => {
-    toastDispatchContext({
-      type: 'HIDE_TOAST',
-      payload: _,
-    });
-  };
-
-  const optionsContext = useOptionsStateContext();
-  const duration = optionsContext.duration
-    ? optionsContext.duration * 1000 // To make a 'second unit'
-    : 2000;
-
-  // https://github.com/facebook/react/issues/14010
-  // https://codesandbox.io/s/elastic-water-w6ikw?file=/src/index.js
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      hideToast(['_']);
-    }, duration);
-
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, [toastState.length]);
-
-  useEffect(() => {
-    setToastMessage(toastState);
-  }, [toastState]);
-
   const showToast = (message: string): void => {
-    // Key duplication prevention of <Li> in toast.tsx
+    // UX Logic
     // Toast duplication prevention for UX
-    if (toastMessage.indexOf(message) === -1) {
-      setToastMessage((prev) => [...prev, message]);
+    if (toastState.indexOf(message) === -1) {
       setToast([...toastState, message]);
     }
   };

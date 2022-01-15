@@ -17,15 +17,13 @@ export const toastReducer: Reducer<ToastStateType, ToastActionType> = (
   state: ToastStateType,
   action: ToastActionType
 ) => {
-  // console.log('state: ', state);
-
   switch (action.type) {
     case 'SET_TOAST':
       return action.payload;
 
     case 'HIDE_TOAST':
-      // Remove the first array element // or I can use state.shift(); method
-      const copyState = [...state]; // 불변성 유지 위해
+      // Remove the first array element
+      const copyState = [...state]; // for immutability
       copyState.splice(0, 1);
       return copyState;
 

@@ -7,8 +7,8 @@ const About: NextPage = () => {
   const { showToast } = useToast();
 
   return (
-    <Main>
-      <Link href="/">
+    <Div>
+      <Link href='/'>
         <a>
           <p>Go to index</p>
         </a>
@@ -18,13 +18,13 @@ const About: NextPage = () => {
       <button onClick={() => showToast('3')}>showToast('3')</button>
       <button onClick={() => showToast('4')}>showToast('4')</button>
       <button onClick={() => showToast('5')}>showToast('5')</button>
-    </Main>
+    </Div>
   );
 };
 
 export default About;
 
-const Main = styled.main`
+const Div = styled.div`
   margin-top: 300px;
   display: flex;
   flex-direction: column;
