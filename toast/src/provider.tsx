@@ -10,7 +10,7 @@ import {
   OptionsType,
 } from './state/options-state';
 import { ToastStateContext, INITIAL_STATE_TOAST } from './state/toast-state';
-import { Toast } from './toast';
+import { ToastList } from './toast-list';
 
 interface ToastProviderProps extends OptionsType {
   children: JSX.Element;
@@ -38,7 +38,7 @@ export const ToastProvider: React.FC<ToastProviderProps> = ({
         <ToastStateContext.Provider value={toastState}>
           <OptionsDispatchContext.Provider value={optionsDispatch}>
             <OptionsStateContext.Provider value={optionsState}>
-              <Toast optionsPayload={optionsPayload} />
+              <ToastList optionsPayload={optionsPayload} />
               {children}
             </OptionsStateContext.Provider>
           </OptionsDispatchContext.Provider>
