@@ -10,49 +10,15 @@ A built-in global-state-management toast notification for React
 
 <br/>
 
-✅ Built-in global-state-management
-
-✅ Easy to use
-
-✅ Multiple toast notifications
-
-✅ Available in both JavaScript and TypeScript
-
-✅ Available on desktop, tablet, mobile
-
-✅ Minimal design
-
-✅ Ready for iOS safe area
-
-✅ New features to update every month!
-
-<br/>
-
-## Motivation ✨
-
-As a digital product designer, I think the toast notification is essential for interaction with users in a digital product. The toast is a good way to send feedback to user's actions. In other words, the toast is a good way to interact with a user. So I frequently use the toast in my product for interaction with users.
-
-But the toast is challenging to develop. The primary reason is global-state-management. Global-state-management is needed because the toast should be used anywhere in a digital product. It is also necessary to continuously show the toast even if the page changes for building a modern web application, just like a mobile native app.
-
-`react-toast` is the result of thinking. With `react-toast`, you don't have to worry about state management of the toast notification. **Just write the message, show the toast!**
-
-<br/>
-
 ## Installation
-
-If you use npm:
 
 ```
 npm i @dalgu/react-toast
 ```
 
-If you use yarn:
-
 ```
 yarn add @dalgu/react-toast
 ```
-
-<br/>
 
 ## Usage
 
@@ -117,7 +83,43 @@ ReactDOM.render(
 
 <br/>
 
+## Features
+
+✅ Built-in global-state-management
+
+✅ Easy to use
+
+✅ Multiple toast notifications
+
+✅ Available on desktop, tablet, mobile
+
+✅ Ready for iOS safe area
+
+<br/>
+
+## New features scheduled to update 💡
+
+✔️ Customizable style
+
+✔️ Customizable motion
+
+✔️ Customizable position
+
+✔️ ~~Multiple toast notifications~~ `Completed on 2021.12.05, Improved on 2022.01.15`
+
+✔️ add test
+
+✔️ ...more new features!
+
+<br/>
+
 ## Version history
+
+### 1.2.0
+
+`2022.01.15`
+
+✔️ Improve multiple toast notifications
 
 ### 1.1.0
 
@@ -143,35 +145,13 @@ ReactDOM.render(
 
 <br/>
 
-## New features scheduled to update 💡
+## Motivation ✨
 
-✔️ Customizable style
+As a digital product designer, I think the toast notification is essential for interaction with users in a digital product. The toast is a good way to send feedback to user's actions. In other words, the toast is a good way to interact with a user. So I frequently use the toast in my product for interaction with users.
 
-✔️ Customizable motion
+But the toast is challenging to develop. The primary reason is global-state-management. Global-state-management is needed because the toast should be used anywhere in a digital product. It is also necessary to continuously show the toast even if the page changes for building a modern web application, just like a mobile native app.
 
-✔️ Customizable position
-
-✔️ ~~Multiple toast notifications~~ `Completed on 2021.12.05`
-
-✔️ Advanced reponsive design
-
-✔️ add test
-
-✔️ ...more new features!
-
-<br/>
-
-## Demo
-
-Coming soon!
-
-<br/>
-
-## Thanks to 🙏
-
-[styled-components](https://github.com/styled-components/styled-components)
-
-[framer-motion](https://github.com/framer/motion)
+`react-toast` is the result of thinking. With `react-toast`, you don't have to worry about state management of the toast notification. **Just write the message, show the toast!**
 
 <br/>
 
