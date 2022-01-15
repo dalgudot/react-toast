@@ -6,9 +6,7 @@
 
 A built-in global-state-management toast notification for React
 
-<br/>
-
-![](https://raw.githubusercontent.com/dalgudot/react-toast/develop/toast/public/%40dalgu%3Areact-toast%201.1.2.gif)
+**Just write the message, show the toast!**
 
 <br/>
 
