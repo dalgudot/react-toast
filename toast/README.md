@@ -20,6 +20,8 @@ npm i @dalgu/react-toast
 yarn add @dalgu/react-toast
 ```
 
+<br/>
+
 ## Usage
 
 ### API
