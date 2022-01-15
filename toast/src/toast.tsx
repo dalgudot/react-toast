@@ -33,8 +33,6 @@ export const Toast = ({ state }: { state: ToastStateElementsType }) => {
 
   return (
     <Li
-      // key={state}
-      // Use 'state' for normal working of framer motion
       variants={toastVariants}
       initial='initial'
       animate='animate'
@@ -46,8 +44,6 @@ export const Toast = ({ state }: { state: ToastStateElementsType }) => {
     </Li>
   );
 };
-// <AnimatePresence>'s child motion components must each have a unique key prop so AnimatePresence can track their presence in the tree.
-// https://codesandbox.io/s/framer-motion-notifications-5cvo9?file=/src/Example.tsx
 
 const Li = styled(motion.li)`
   /* S of CSS Reset */

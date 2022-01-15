@@ -4,7 +4,7 @@
 
 # react-toast
 
-A built-in global-state-management toast notification library for React web application
+A built-in global-state-management toast notification for React
 
 <br/>
 

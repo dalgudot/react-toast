@@ -34,25 +34,22 @@ export const ToastList = ({
   const zindex = optionsContext.zIndex;
 
   return (
-    <>
-      {/* <ToastPositionUl key='ToastPositionUl' zindex={zindex}> */}
-      <ToastPositionUl zindex={zindex}>
-        <AnimatePresence>
-          {toastState.length !== 0 &&
-            toastState
-              .map((state: ToastStateElementsType, _idx: number) => (
-                <Toast key={state} state={state} />
-              ))
-              .reverse()}
-        </AnimatePresence>
-      </ToastPositionUl>
-    </>
+    <UlPosition zindex={zindex}>
+      <AnimatePresence>
+        {toastState.length !== 0 &&
+          toastState
+            .map((state: ToastStateElementsType, _idx: number) => (
+              <Toast key={state} state={state} />
+            ))
+            .reverse()}
+      </AnimatePresence>
+    </UlPosition>
   );
 };
 // <AnimatePresence>'s child motion components must each have a unique key prop so AnimatePresence can track their presence in the tree.
 // https://codesandbox.io/s/framer-motion-notifications-5cvo9?file=/src/Example.tsx
 
-const ToastPositionUl = styled.ul<{ zindex?: number }>`
+const UlPosition = styled.ul<{ zindex?: number }>`
   /* S of CSS Reset */
   box-sizing: border-box;
   list-style: none;

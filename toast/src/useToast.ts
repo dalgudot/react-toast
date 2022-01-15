@@ -13,8 +13,7 @@ export const useToast = () => {
   };
 
   const showToast = (message: string): void => {
-    // UX Logic
-    // Toast duplication prevention for UX
+    // UX Logic, Toast duplication prevention for UX
     if (toastState.indexOf(message) === -1) {
       setToast([...toastState, message]);
     }

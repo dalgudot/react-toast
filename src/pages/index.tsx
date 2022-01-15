@@ -7,7 +7,7 @@ const Index: NextPage = () => {
 
   return (
     <>
-      <Link href="/about">
+      <Link href='/about'>
         <a>
           <p>Go to about</p>
         </a>
@@ -16,7 +16,7 @@ const Index: NextPage = () => {
         onClick={() =>
           showToast(
             `This page is Index
-This page is Index
+  This page is Index
 This page is Index`
           )
         }
